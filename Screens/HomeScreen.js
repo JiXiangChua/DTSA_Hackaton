@@ -22,6 +22,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import MapView from "react-native-maps";
+import { Marker } from "react-native-maps";
 
 export default function HomeScreen() {
   function renderHeader() {
@@ -133,12 +134,33 @@ export default function HomeScreen() {
           <MapView
             style={styles.map}
             initialRegion={{
-              latitude: 1.3521,
-              longitude: 103.8198,
-              latitudeDelta: 0.3,
-              longitudeDelta: 0.3,
+              latitude: 1.310882,
+              longitude: 103.80666,
+              latitudeDelta: 0.2,
+              longitudeDelta: 0.2,
             }}
-          />
+          >
+            <Marker
+              coordinate={{ latitude: 1.3521, longitude: 103.8198 }}
+              title={"Number of cases:"}
+              description={"6"}
+            />
+            <Marker
+              coordinate={{ latitude: 1.32159, longitude: 103.84591 }}
+              title={"Number of cases:"}
+              description={"29"}
+            />
+            <Marker
+              coordinate={{ latitude: 1.36466, longitude: 103.99151 }}
+              title={"Number of cases:"}
+              description={"31"}
+            />
+            <Marker
+              coordinate={{ latitude: 1.33304, longitude: 103.74331 }}
+              title={"Number of cases:"}
+              description={"18"}
+            />
+          </MapView>
         </View>
 
         {/* This closing view is for the display panel */}
