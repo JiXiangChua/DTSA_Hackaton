@@ -21,6 +21,7 @@ import firebase from "../database/firestoreDB";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import MapView from "react-native-maps";
 
 export default function HomeScreen() {
   function renderHeader() {
@@ -126,7 +127,21 @@ export default function HomeScreen() {
             </LinearGradient>
           </TouchableOpacity>
         </View>
-        <Text style={styles.familyText}>Covid Hot Spots</Text>
+
+        <View style={styles.container}>
+          <Text style={styles.familyText}>Covid Hot Spots</Text>
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: 1.3521,
+              longitude: 103.8198,
+              latitudeDelta: 0.3,
+              longitudeDelta: 0.3,
+            }}
+          />
+        </View>
+
+        {/* This closing view is for the display panel */}
       </View>
     </ScrollView>
   );
@@ -177,5 +192,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+  },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  map: {
+    width: "95%",
+    height: 400,
+    marginBottom: 30,
+    borderRadius: 20,
+    borderColor: "darkgrey",
+    borderWidth: 0.5,
+    shadowOffset: { width: 10, height: 10 },
+    shadowColor: "black",
+    shadowOpacity: 1.0,
   },
 });
