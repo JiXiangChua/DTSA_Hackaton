@@ -26,6 +26,9 @@ var newsURL = [
   "https://www.channelnewsasia.com/news/singapore/covid-19-new-cases-june-16-community-unlinked-imported-moh-15024090",
   "https://www.channelnewsasia.com/news/singapore/covid-19-vaccination-companies-days-off-employees-side-effects-15011686",
   "https://www.channelnewsasia.com/news/singapore/covid-19-task-force-evaluating-the-timing-and-scope-reopening-15025980",
+  "https://www.channelnewsasia.com/news/singapore/massage-parlours-closed-10-days-customer-not-wearing-mask-15026482",
+  "https://www.channelnewsasia.com/news/singapore/covid-19-diy-test-sales-start-pharmacies-more-customers-15025730",
+  "https://www.channelnewsasia.com/news/singapore/maid-unlinked-covid-19-tested-regional-screening-centre-rsc-15020432",
 ];
 
 export default function NewsScreen() {
@@ -158,7 +161,7 @@ export default function NewsScreen() {
           {/* 4th Headline */}
           <TouchableOpacity
             onPress={() => {
-              Linking.openURL(newsURL[0]);
+              Linking.openURL(newsURL[3]);
             }}
           >
             <Card
@@ -169,7 +172,7 @@ export default function NewsScreen() {
               }}
             >
               <Image
-                source={require("../images/news_covid_" + 1 + ".jpeg")}
+                source={require("../images/news_covid_" + 4 + ".jpeg")}
                 style={{
                   width: 80,
                   height: 50,
@@ -181,8 +184,8 @@ export default function NewsScreen() {
               ></Image>
 
               <Text style={{ marginRight: 90, fontWeight: "bold" }}>
-                19 new COVID-19 community cases in Singapore, including three
-                unlinked
+                20 massage parlours ordered to close temporarily due to breaches
+                of COVID-19 safe management measures
               </Text>
             </Card>
           </TouchableOpacity>
@@ -190,7 +193,7 @@ export default function NewsScreen() {
           {/* 5th Headline */}
           <TouchableOpacity
             onPress={() => {
-              Linking.openURL(newsURL[1]);
+              Linking.openURL(newsURL[4]);
             }}
           >
             <Card
@@ -201,7 +204,7 @@ export default function NewsScreen() {
               }}
             >
               <Image
-                source={require("../images/news_covid_" + 2 + ".jpeg")}
+                source={require("../images/news_covid_" + 5 + ".jpeg")}
                 style={{
                   width: 80,
                   height: 50,
@@ -213,8 +216,8 @@ export default function NewsScreen() {
               ></Image>
 
               <Text style={{ marginRight: 90, fontWeight: "bold" }}>
-                Days off, free medical consultations: Comapnies roll out support
-                for employees taking COVID-19 vaccine
+                Some pharmacies see uptick in customers as sales of DIY COVID-19
+                antigen rapid test kits begin
               </Text>
             </Card>
           </TouchableOpacity>
@@ -222,7 +225,7 @@ export default function NewsScreen() {
           {/* 6th Headline */}
           <TouchableOpacity
             onPress={() => {
-              Linking.openURL(newsURL[2]);
+              Linking.openURL(newsURL[5]);
             }}
           >
             <Card
@@ -233,7 +236,7 @@ export default function NewsScreen() {
               }}
             >
               <Image
-                source={require("../images/news_covid_" + 3 + ".jpeg")}
+                source={require("../images/news_covid_" + 6 + ".jpeg")}
                 style={{
                   width: 80,
                   height: 50,
@@ -245,8 +248,8 @@ export default function NewsScreen() {
               ></Image>
 
               <Text style={{ marginRight: 90, fontWeight: "bold" }}>
-                COVID-19 task force 'evaluating' timing and scope of reopening
-                amid fresh outbreak: Lawrence Wong
+                Maid who was tested for COVID-19 at a regional screening centre
+                should have been taken to doctor first: MOH
               </Text>
             </Card>
           </TouchableOpacity>

@@ -19,7 +19,30 @@ import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-const times = ["08", "09", "10", "11", "12", "13", "14"];
+// const times = ["08", "09", "10", "11", "12", "13", "14"];
+const times = [
+  {
+    time: "08",
+  },
+  {
+    time: "09",
+  },
+  {
+    time: "10",
+  },
+  {
+    time: "11",
+  },
+  {
+    time: "12",
+  },
+  {
+    time: "13",
+  },
+  {
+    time: "14",
+  },
+];
 const temperatures = ["36.7", "36.2", "36.1", "36.7", "37.0", "36.9", "36.6"];
 const weeks = [];
 
@@ -30,15 +53,22 @@ function timeLog(times, temperature) {
         <View style={{ flexDirection: "row", marginBottom: 20 }}>
           {times.map((item, key) => (
             <Text
-              style={{ marginHorizontal: 20, fontSize: 15, fontWeight: "bold" }}
+              style={{
+                marginRight: 50,
+                fontSize: 15,
+                fontWeight: "bold",
+                marginStart: 10,
+              }}
             >
-              {item}
+              {item.time}
             </Text>
           ))}
         </View>
         <View style={{ flexDirection: "row" }}>
           {temperature.map((item, key) => (
-            <Text style={{ marginHorizontal: 18.8, marginBottom: 10 }}>
+            <Text
+              style={{ marginStart: 10, marginBottom: 10, marginRight: 40 }}
+            >
               {item}
             </Text>
           ))}

@@ -45,24 +45,69 @@ export default function HomeScreen() {
           horizontal={true}
         >
           <TouchableOpacity
-            style={[{ backgroundColor: "#EB8383" }, styles.category]}
+            style={[
+              { backgroundColor: "#EB8383", alignItems: "center" },
+              styles.category,
+            ]}
           >
-            <Text>Cat 1</Text>
+            <Text
+              style={{
+                fontSize: 11,
+                fontFamily: "Georgia",
+              }}
+            >
+              Daily Cases:
+            </Text>
+            <Text
+              style={{ fontSize: 40, color: "#EAEE1B", fontWeight: "bold" }}
+            >
+              19
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[{ backgroundColor: "#F6BA72" }, styles.category]}
+            style={[
+              {
+                backgroundColor: "#F6BA72",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+              styles.category,
+            ]}
           >
-            <Text>Cat 2</Text>
+            <Image
+              source={require("../images/safeEntry.jpeg")}
+              style={{ width: 80, height: 80 }}
+            ></Image>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[{ backgroundColor: "#80F3D8" }, styles.category]}
+            style={[
+              {
+                backgroundColor: "#80F3D8",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+              styles.category,
+            ]}
           >
-            <Text>Cat 3</Text>
+            <Image
+              source={require("../images/health_hub.png")}
+              style={{ width: 80, height: 80 }}
+            ></Image>
           </TouchableOpacity>
           <TouchableOpacity
-            style={[{ backgroundColor: "#83B3EB" }, styles.category]}
+            style={[
+              {
+                backgroundColor: "#83B3EB",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+              styles.category,
+            ]}
           >
-            <Text>Cat 4</Text>
+            <Image
+              source={require("../images/telegram2.png")}
+              style={{ width: 80, height: 80 }}
+            ></Image>
           </TouchableOpacity>
         </ScrollView>
         <Text style={styles.familyText}>Family Members</Text>
@@ -197,6 +242,7 @@ const styles = StyleSheet.create({
     height: 80,
     padding: 10,
     margin: 10,
+    borderRadius: 8,
   },
   familyText: {
     marginVertical: 10,
