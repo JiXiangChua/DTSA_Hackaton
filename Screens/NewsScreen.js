@@ -8,6 +8,7 @@ import {
   ImageStore,
   StyleSheet,
   Image,
+  Linking,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -18,14 +19,28 @@ import firebase from "../database/firestoreDB";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { Card } from "react-native-shadow-cards";
+
+var newsImage = ["../images/news_covid_1.jpeg", "../images/news_covid_2.jpeg"];
+var newsURL = [
+  "https://www.channelnewsasia.com/news/singapore/covid-19-new-cases-june-16-community-unlinked-imported-moh-15024090",
+  "https://www.channelnewsasia.com/news/singapore/covid-19-vaccination-companies-days-off-employees-side-effects-15011686",
+  "https://www.channelnewsasia.com/news/singapore/covid-19-task-force-evaluating-the-timing-and-scope-reopening-15025980",
+];
 
 export default function NewsScreen() {
   function renderHeader() {
     return (
       <View style={styles.headerRectangle}>
         <Image
-          source={require("../images/StayHome.png")}
-          style={{ width: 200, height: 170, marginTop: 25 }}
+          source={require("../images/News.png")}
+          style={{
+            width: "80%",
+            height: 150,
+            marginTop: 25,
+            alignItems: "center",
+            alignContent: "center",
+          }}
         ></Image>
       </View>
     );
@@ -34,7 +49,210 @@ export default function NewsScreen() {
     <ScrollView style={{ backgroundColor: "#77D9EF" }}>
       <View>{renderHeader()}</View>
       <View style={styles.displayPanel}>
-        <Text style={styles.title}>Category</Text>
+        <View style={{ justifyContent: "center", alignItems: "center" }}>
+          <Text style={styles.title}>Updates on the</Text>
+          <Text style={styles.title}>Latest Covid Situation</Text>
+        </View>
+        <View
+          style={{
+            alignItems: "center",
+            marginVertical: 20,
+          }}
+        >
+          {/* First Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[0]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 1 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                19 new COVID-19 community cases in Singapore, including three
+                unlinked
+              </Text>
+            </Card>
+          </TouchableOpacity>
+
+          {/* Second Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[1]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 2 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                Days off, free medical consultations: Comapnies roll out support
+                for employees taking COVID-19 vaccine
+              </Text>
+            </Card>
+          </TouchableOpacity>
+
+          {/* 3rd Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[2]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 3 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                COVID-19 task force 'evaluating' timing and scope of reopening
+                amid fresh outbreak: Lawrence Wong
+              </Text>
+            </Card>
+          </TouchableOpacity>
+
+          {/* 4th Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[0]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 1 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                19 new COVID-19 community cases in Singapore, including three
+                unlinked
+              </Text>
+            </Card>
+          </TouchableOpacity>
+
+          {/* 5th Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[1]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 2 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                Days off, free medical consultations: Comapnies roll out support
+                for employees taking COVID-19 vaccine
+              </Text>
+            </Card>
+          </TouchableOpacity>
+
+          {/* 6th Headline */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL(newsURL[2]);
+            }}
+          >
+            <Card
+              style={{
+                padding: 10,
+                margin: 10,
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../images/news_covid_" + 3 + ".jpeg")}
+                style={{
+                  width: 80,
+                  height: 50,
+                  alignItems: "center",
+                  alignContent: "center",
+                  borderRadius: 5,
+                  marginRight: 20,
+                }}
+              ></Image>
+
+              <Text style={{ marginRight: 90, fontWeight: "bold" }}>
+                COVID-19 task force 'evaluating' timing and scope of reopening
+                amid fresh outbreak: Lawrence Wong
+              </Text>
+            </Card>
+          </TouchableOpacity>
+        </View>
+
+        {/* This closing view is for the display panel */}
       </View>
     </ScrollView>
   );
@@ -59,8 +277,8 @@ const styles = StyleSheet.create({
   title: {
     color: "black",
     fontWeight: "bold",
-    fontSize: 30,
-    marginLeft: 20,
+    fontSize: 20,
+
     marginTop: 10,
   },
   category: {
@@ -85,5 +303,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+  },
+  newsButton: {
+    width: "80%",
+    height: 100,
+    backgroundColor: "white",
+    margin: 5,
+    borderRadius: 10,
+    borderColor: "black",
+    borderWidth: 0,
+    overflow: "hidden",
+
+    // shadowRadius: 10,
+
+    shadowOffset: { width: 10, height: 10 },
+    shadowColor: "black",
+    shadowOpacity: 1.0,
   },
 });

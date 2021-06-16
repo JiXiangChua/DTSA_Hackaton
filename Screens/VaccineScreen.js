@@ -24,8 +24,8 @@ export default function VaccineScreen() {
     return (
       <View style={styles.headerRectangle}>
         <Image
-          source={require("../images/StayHome.png")}
-          style={{ width: 200, height: 170, marginTop: 25 }}
+          source={require("../images/doctor_art.png")}
+          style={{ width: 200, height: 170, marginTop: 40 }}
         ></Image>
       </View>
     );
@@ -34,7 +34,9 @@ export default function VaccineScreen() {
     <ScrollView style={{ backgroundColor: "#EEC0A7" }}>
       <View>{renderHeader()}</View>
       <View style={styles.displayPanel}>
-        <Text style={styles.title}>Category</Text>
+        <Text style={styles.title}>Vaccination Progress</Text>
+
+        {/* This closing view is for the display panel */}
       </View>
     </ScrollView>
   );
