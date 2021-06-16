@@ -110,9 +110,14 @@ export default function HomeScreen() {
             ></Image>
           </TouchableOpacity>
         </ScrollView>
-        <Text style={styles.familyText}>Family Members</Text>
+        <Text style={styles.familyText}>
+          Family Members{"           "}
+          <TouchableOpacity>
+            <AntDesign name="plussquare" size={30} color="#DD5CD0" />
+          </TouchableOpacity>
+        </Text>
 
-        <View style={{ flexDirection: "row", margin: 10 }}>
+        <View style={{ margin: 10, alignItems: "center" }}>
           <TouchableOpacity>
             <LinearGradient
               colors={["#67FC32", "#D9FFCC", "#fff"]}
@@ -125,8 +130,18 @@ export default function HomeScreen() {
               <Text style={{ margin: 10, fontWeight: "bold" }}>DAD</Text>
 
               <FontAwesome name="check-circle" size={24} color="darkgreen" />
+              <Text
+                style={{
+                  marginRight: 180,
+                  fontWeight: "bold",
+                  marginLeft: 20,
+                }}
+              >
+                No exposure alerts
+              </Text>
             </LinearGradient>
           </TouchableOpacity>
+
           <TouchableOpacity>
             <LinearGradient
               colors={["#67FC32", "#D9FFCC", "#fff"]}
@@ -139,11 +154,20 @@ export default function HomeScreen() {
               <Text style={{ margin: 10, fontWeight: "bold" }}>MUM</Text>
 
               <FontAwesome name="check-circle" size={24} color="darkgreen" />
+              <Text
+                style={{
+                  marginRight: 180,
+                  fontWeight: "bold",
+                  marginLeft: 20,
+                }}
+              >
+                No exposure alerts
+              </Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>
 
-        <View style={{ flexDirection: "row", margin: 10 }}>
+        <View style={{ marginHorizontal: 10, alignItems: "center" }}>
           <TouchableOpacity>
             <LinearGradient
               colors={["#67FC32", "#D9FFCC", "#fff"]}
@@ -153,11 +177,21 @@ export default function HomeScreen() {
                 source={require("../images/female_user.png")}
                 style={{ width: 50, height: 50 }}
               ></Image>
-              <Text style={{ margin: 10, fontWeight: "bold" }}>DAUGT</Text>
+              <Text style={{ margin: 10, fontWeight: "bold" }}>DAUGHTER</Text>
 
               <FontAwesome name="check-circle" size={24} color="darkgreen" />
+              <Text
+                style={{
+                  marginRight: 180,
+                  fontWeight: "bold",
+                  marginLeft: 20,
+                }}
+              >
+                No exposure alerts
+              </Text>
             </LinearGradient>
           </TouchableOpacity>
+
           <TouchableOpacity>
             <LinearGradient
               colors={["#F87808", "#FCE5D1", "#fff"]}
@@ -170,12 +204,19 @@ export default function HomeScreen() {
               <Text style={{ margin: 10, fontWeight: "bold" }}>SON</Text>
 
               <AntDesign name="exclamationcircle" size={24} color="darkred" />
+              <Text
+                style={{ marginRight: 140, fontWeight: "bold", marginLeft: 20 }}
+              >
+                This member has visited a COVID-19 case location.
+              </Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>
 
         <View style={styles.container}>
-          <Text style={styles.familyText}>Covid Hot Spots</Text>
+          <Text style={[styles.familyText, { padding: 20 }]}>
+            Covid Cluster
+          </Text>
           <MapView
             style={styles.map}
             initialRegion={{
@@ -235,7 +276,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 30,
     marginLeft: 20,
-    marginTop: 10,
+    marginTop: 20,
   },
   category: {
     width: 80,
@@ -252,14 +293,17 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   family: {
-    width: 150,
+    width: 300,
     height: 80,
     borderRadius: 20,
     marginHorizontal: 15,
     marginVertical: 5,
+    marginBottom: 20,
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    borderWidth: 0.2,
+    borderColor: "grey",
   },
   container: {
     flex: 1,
